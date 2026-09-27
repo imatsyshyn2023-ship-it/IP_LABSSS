@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма студентської картки</title>
+</head>
+<body>
+
+    <h1>Форма студентської картки</h1>
+
+    <form action="submit.php" method="post">
+
+        <section>
+            <h2>Особиста інформація</h2>
+            <fieldset>
+                Повне ім'я: <input type="text" name="fullname" placeholder="Введіть своє повне ім'я"><br><br>
+
+                Електронна пошта: <input type="email" name="email" placeholder="Введіть свою електронну пошту"><br><br>
+
+                Пароль: <input type="password" name="password" placeholder="Введіть пароль"><br><br>
+
+                Вік: <input type="number" name="age"><br><br>
+
+                Дата народження: <input type="date" name="dob"><br><br>
+
+                Стать:<br>
+                <input type="radio" name="gender" value="Male"> Чоловіча<br>
+                <input type="radio" name="gender" value="Female"> Жіноча<br>
+                <input type="radio" name="gender" value="Other"> Інша<br><br>
+
+                Відомі мови:<br>
+                <input type="checkbox" name="languages" value="English"> Англійська<br>
+                <input type="checkbox" name="languages" value="Spanish"> Іспанська<br>
+                <input type="checkbox" name="languages" value="French"> Французька<br><br>
+
+                Країна:
+                <select name="country">
+                    <option value="" disabled selected>Виберіть свою країну</option>
+                    <option value="Ukraine">Україна</option>
+                    <option value="Poland">Польща</option>
+                    <option value="Germany">Німеччина</option>
+                    <option value="USA">США</option>
+                </select>
+            </fieldset>
+        </section>
+
+        <section>
+            <h2>Предмети коледжу</h2>
+            <fieldset>
+                Виберіть предмети:<br>
+                <select name="subjects" multiple>
+                    <option value="Mathematics">Математика</option>
+                    <option value="Computer Science">Інформатика</option>
+                    <option value="Physics">Фізика</option>
+                    <option value="Chemistry">Хімія</option>
+                    <option value="English">Англійська мова</option>
+                </select><br><br>
+
+                Оцініть свій інтерес до інформатики:<br>
+                <input type="range" name="interest">
+            </fieldset>
+        </section>
+
+        <section>
+            <h2>Оцінювання навичок</h2>
+            <fieldset>
+                Опишіть свої навички:<br>
+                <textarea name="skills" placeholder="Перелічіть свої навички тут..."></textarea><br><br>
+
+                Завантажте своє резюме: <input type="file" name="resume"><br><br>
+
+                Виберіть свій улюблений колір: <input type="color" name="color"><br><br>
+
+                Бажаний час навчання: <input type="time" name="study_time"><br><br>
+
+                <input type="submit" value="Надіслати анкету">
+            </fieldset>
+        </section>
+
+    </form>
+
+    <p>&copy; 2026 Студентська картка від Ігоря Мацишин. Усі права захищено.</p>
+
+</body>
+</html>
