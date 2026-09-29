@@ -1,85 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Форма студентської картки</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <h1>Студентська картка</h1>
+    </header>
 
-    <h1>Форма студентської картки</h1>
-
-    <form action="submit.php" method="post">
-
+    <main>
+      <form action="#" method="post" enctype="multipart/form-data">
         <section>
-            <h2>Особиста інформація</h2>
+          <h2>Особиста інформація</h2>
+          <fieldset>
+            <legend>Вкажіть свої дані</legend>
+
+            <p>
+              <label for="fullName">Повне ім'я:</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Введіть своє повне ім'я"
+                required
+                minlength="3"
+                maxlength="10"
+                pattern="^[A-Za-zА-Яа-яІіЇїЄєҐґ'\s]+$"
+              />
+            </p>
+
+            <p>
+              <label for="email">Електронна пошта:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Введіть свою електронну пошту"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="password">Пароль:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Введіть пароль"
+                required
+                minlength="8"
+                maxlength="32"
+              />
+            </p>
+
+            <p>
+              <label for="age">Вік:</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                min="16"
+                max="100"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="dob">Дата народження:</label>
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                required
+                min="1920-01-01"
+                max="2010-12-31"
+              />
+            </p>
+
             <fieldset>
-                Повне ім'я: <input type="text" name="fullname" placeholder="Введіть своє повне ім'я"><br><br>
-
-                Електронна пошта: <input type="email" name="email" placeholder="Введіть свою електронну пошту"><br><br>
-
-                Пароль: <input type="password" name="password" placeholder="Введіть пароль"><br><br>
-
-                Вік: <input type="number" name="age"><br><br>
-
-                Дата народження: <input type="date" name="dob"><br><br>
-
-                Стать:<br>
-                <input type="radio" name="gender" value="Male"> Чоловіча<br>
-                <input type="radio" name="gender" value="Female"> Жіноча<br>
-                <input type="radio" name="gender" value="Other"> Інша<br><br>
-
-                Відомі мови:<br>
-                <input type="checkbox" name="languages" value="English"> Англійська<br>
-                <input type="checkbox" name="languages" value="Spanish"> Іспанська<br>
-                <input type="checkbox" name="languages" value="French"> Французька<br><br>
-
-                Країна:
-                <select name="country">
-                    <option value="" disabled selected>Виберіть свою країну</option>
-                    <option value="Ukraine">Україна</option>
-                    <option value="Poland">Польща</option>
-                    <option value="Germany">Німеччина</option>
-                    <option value="USA">США</option>
-                </select>
+              <legend>Стать:</legend>
+              <label>
+                <input type="radio" name="gender" value="male" required />
+                Чоловіча </label
+              ><br />
+              <label>
+                <input type="radio" name="gender" value="female" />
+                Жіноча </label
+              ><br />
+              <label>
+                <input type="radio" name="gender" value="other" /> Інша
+              </label>
             </fieldset>
+
+            <fieldset>
+              <legend>Знання мов:</legend>
+              <label>
+                <input type="checkbox" name="languages" value="english" />
+                Англійська </label
+              ><br />
+              <label>
+                <input type="checkbox" name="languages" value="spanish" />
+                Іспанська </label
+              ><br />
+              <label>
+                <input type="checkbox" name="languages" value="french" />
+                Французька
+              </label>
+            </fieldset>
+
+            <p>
+              <label for="country">Країна:</label>
+              <select id="country" name="country" required>
+                <option value="" disabled selected>Оберіть свою країну</option>
+                <option value="ukraine">Україна</option>
+                <option value="usa">США</option>
+                <option value="uk">Велика Британія</option>
+                <option value="poland">Польща</option>
+                <option value="germany">Німеччина</option>
+              </select>
+            </p>
+          </fieldset>
         </section>
 
         <section>
-            <h2>Предмети коледжу</h2>
-            <fieldset>
-                Виберіть предмети:<br>
-                <select name="subjects" multiple>
-                    <option value="Mathematics">Математика</option>
-                    <option value="Computer Science">Інформатика</option>
-                    <option value="Physics">Фізика</option>
-                    <option value="Chemistry">Хімія</option>
-                    <option value="English">Англійська мова</option>
-                </select><br><br>
+          <h2>Навчальні предмети</h2>
+          <fieldset>
+            <legend>Оберіть свої предмети</legend>
 
-                Оцініть свій інтерес до інформатики:<br>
-                <input type="range" name="interest">
-            </fieldset>
+            <p>
+              <label for="subjects">Оберіть предмети:</label><br />
+              <select id="subjects" name="subjects" multiple size="5" required>
+                <option value="mathematics">Математика</option>
+                <option value="computer_science">Інформатика</option>
+                <option value="physics">Фізика</option>
+                <option value="chemistry">Хімія</option>
+                <option value="english">Англійська мова</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="interest">Оцініть свій інтерес до інформатики:</label
+              ><br />
+              <input
+                type="range"
+                id="interest"
+                name="interest"
+                min="1"
+                max="10"
+                step="1"
+                value="5"
+              />
+            </p>
+          </fieldset>
         </section>
+        
 
         <section>
-            <h2>Оцінювання навичок</h2>
-            <fieldset>
-                Опишіть свої навички:<br>
-                <textarea name="skills" placeholder="Перелічіть свої навички тут..."></textarea><br><br>
+          <h2>Оцінювання навичок</h2>
+          <fieldset>
+            <legend>Оцініть свої навички</legend>
 
-                Завантажте своє резюме: <input type="file" name="resume"><br><br>
+            <p>
+              <label for="skills">Опишіть свої навички:</label><br />
+              <textarea
+                id="skills"
+                name="skills"
+                rows="4"
+                cols="45"
+                placeholder="Перелічіть свої навички тут..."
+                minlength="10"
+                maxlength="500"
+              ></textarea>
+            </p>
 
-                Виберіть свій улюблений колір: <input type="color" name="color"><br><br>
+            <p>
+              <label for="resume">Завантажте своє резюме:</label>
+              <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf,.doc,.docx"
+              />
+            </p>
 
-                Бажаний час навчання: <input type="time" name="study_time"><br><br>
+            <p>
+              <label for="favColor">Оберіть свій улюблений колір:</label>
+              <input
+                type="color"
+                id="favColor"
+                name="favColor"
+                value="#000000"
+              />
+            </p>
 
-                <input type="submit" value="Надіслати анкету">
-            </fieldset>
+            <p>
+              <label for="studyTime">Бажаний час навчання:</label>
+              <input type="time" id="studyTime" name="studyTime" required />
+            </p>
+
+            <p>
+              <input type="submit" value="Надіслати форму" />
+            </p>
+          </fieldset>
         </section>
+      </form>
+    </main>
 
-    </form>
-
-    <p>&copy; 2026 Студентська картка від Ігоря Мацишин. Усі права захищено.</p>
-
-</body>
+    <footer>
+      <p> &copy; 2026 Студентська картка, автор Ігор Мацишин. Усі права захищено.</p>
+    </footer>
+  </body>
 </html>
